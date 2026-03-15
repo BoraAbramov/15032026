@@ -30,11 +30,9 @@ def get_max(dict1: dict) -> tuple:
     :return: (<name>, <grade>) of the max student
     '''
     grade_list = list()
-    for key, value in grades.items():
-        grade_list.append(value)
-    max_grade = max(grade_list)
-    return max_grade
-
+    for key, value in dict1.items():
+        if value == max(dict1.values()):
+            return (key, value)
 
 grades = {"Tom":80, "Anna":95, "John":70}
 print(get_max(grades))
@@ -52,7 +50,13 @@ def get_count(list1: list) -> dict:
     :param list1: list of numbers
     :return: dict { <number>: <how many times appear> }
     '''
-    pass
+    dict_count = dict()
+    for item in list3:
+        _count = list3.count(item)
+        dict_count[item] = _count
+    return dict_count
 
+import pprint
 
 list3 = [4, 2, 1, 2, 3, -1, 3, 2, 2]
+pprint.pprint(get_count(list3))
