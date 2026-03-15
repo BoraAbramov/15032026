@@ -132,4 +132,47 @@ def get_cities_sorted_by_population(cities: dict) -> list:
 
     :return: list of city names sorted by population (small → big)
     '''
-    pass
+    cities2 = dict()
+    for key, value in cities.items():
+        cities2[key] = value["population"]
+
+    return sorted(cities2, reverse= True)
+
+
+
+
+cities = {
+    "Tokyo": {"language": "Japanese", "population": 37_400_000, "size": 2194, "country": "Japan"},
+    "Paris": {"language": "French", "population": 2_140_000, "size": 105, "country": "France"},
+    "New York": {"language": "English", "population": 8_419_000, "size": 783, "country": "USA"},
+    "London": {"language": "English", "population": 8_982_000, "size": 1572, "country": "UK"},
+    "Madrid": {"language": "Spanish", "population": 3_223_000, "size": 604, "country": "Spain"},
+    "Rome": {"language": "Italian", "population": 2_873_000, "size": 1285, "country": "Italy"}
+}
+
+print(get_cities_sorted_by_population(cities))
+
+'''7
+["apple","banana","avocado","blueberry","apricot","corn"]
+
+-> {
+    "a": ["apple","avocado","apricot"],
+    "b": ["banana","blueberry"],
+    "c": ["corn"]
+}
+'''
+def group_by_letter(words: list) -> dict:
+    '''
+
+    :param words: list of words
+    :return: dictionary where:
+             key = first letter of the word
+             value = list of all words that start with that letter
+    '''
+    abc_dict = dict()
+    for item in list7:
+        abc_dict[str(item[0])] = str(item)
+    return abc_dict
+
+list7 = ["apple","banana","avocado","blueberry","apricot","corn"]
+print(group_by_letter(list7))
